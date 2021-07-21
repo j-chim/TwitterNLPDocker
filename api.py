@@ -10,8 +10,8 @@ def parse_data():
     out_filename = "output.txt"
     with open(in_filename, 'w') as f:
         for sent in sents:
-            f.write(sent)
-            f.write('\n')
+            f.write(sent.encode("utf-8"))
+            f.write('\n'.encode("utf-8"))
 
     cmds = ["python", "python/ner/extractEntities.py",
             in_filename, "-o", out_filename]
